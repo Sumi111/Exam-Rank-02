@@ -1,4 +1,4 @@
-#include "sumi.h"
+#include "get_next_line.h"
 
 int	ft_strlen(char *s)
 {
