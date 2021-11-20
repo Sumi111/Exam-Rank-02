@@ -5,6 +5,8 @@ int	ft_strlen(char *s)
 	int i;
 	
 	i = 0;
+	if (!s)
+		return(0);
 	while(s[i])
 		i++;
 	return(i);
@@ -41,7 +43,7 @@ char	*ft_strjoin(char *str, char *buf)
 		j++;
 	}
 	result[j] = '\0';
-	free(buff);
+	free(str);
 	return(result);
 }
 
