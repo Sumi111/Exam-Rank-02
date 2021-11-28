@@ -1,5 +1,5 @@
 #include<stdarg.h>
-#incude<unistd.h>
+#include<unistd.h>
 
 int ft_print_char(char c)
 {
@@ -38,7 +38,7 @@ int ft_print_str(char *str, int ct)
     ct += ft_strlen(str);
   }
   else
-    ct = ft_print_str("(null)");
+    ct = ft_print_str("(null)", ct);
   return (ct);
 }
 
@@ -78,11 +78,11 @@ int ft_printf(const char *str, ...)
   {
     if (str[i] != '%')
     {
-      write(1, str[i], 1);
+      write(1, &str[i], 1);
       ct++;
     }
     else
-      ct = ft_arg(str[i], ap, ct);
+      ct = ft_arg(str[++i], ap, ct);
     i++;
   }
   va_end(ap);
