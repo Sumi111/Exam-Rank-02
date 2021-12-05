@@ -19,6 +19,7 @@ int ft_print_int(long n, int ct)
   if (n >= 10)
     ct = ft_print_int(n /10, ct);
   ct = ft_print_char(n % 10 + '0', ct);
+  return (ct);
 }
 
 int ft_strlen(char *str)
