@@ -1,5 +1,6 @@
 #include<stdarg.h>
 #include<unistd.h>
+#include <stdio.h>
 
 int ft_print_char(char c, int ct)
 {
@@ -88,4 +89,15 @@ int ft_printf(const char *str, ...)
   }
   va_end(ap);
   return(ct);
+}
+
+int main()
+{
+	int n = 198892;
+	char c[] = "hello world";
+	int ct, ct1;
+
+	ct = ft_printf("  %d %s %x", n, c, n);
+	ct1 = printf("\n  %d %s %x", n, c, n);
+	printf ("\n %d %d", ct, ct1);
 }
